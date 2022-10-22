@@ -6,7 +6,7 @@ const res = require('express/lib/response');
 let app = express();
 
 console.log("Hello World");
-app.post(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:false}));
 
 app.use('/public', express.static(__dirname + '/public'));
 
