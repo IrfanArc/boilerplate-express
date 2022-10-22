@@ -1,5 +1,6 @@
 require('dotenv').config();
 let express = require('express');
+const req = require('express/lib/request');
 let app = express();
 
 console.log("Hello World");
@@ -33,6 +34,9 @@ app.get('/now', function(req, res, next) {
     res.json({'time':req.time});
 });
 
+app.get('/:word/echo', req, res) {
+    req.json({'echo':req.params.word});
+}
 
 
 
